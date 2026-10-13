@@ -27,6 +27,7 @@ export class SeeItLivePanel extends Component {
         this.state = useState({
             phase: "idle",          // idle | starting | waiting | live
             channel: "sms",
+            channels: ["sms", "email", "link"],  // narrowed by loadChannels()
             recipient: "",
             recipients: { phones: [], emails: [] },
             consent: false,
@@ -72,6 +73,11 @@ export class SeeItLivePanel extends Component {
         });
 
         onMounted(() => {
+            // Deliberately not awaited, and not in onWillStart: the lookup is
+            // an HTTP call to SeeItLive, and onWillStart holds up the whole
+            // form — a slow or unreachable API must not delay opening a
+            // contact. Every channel stays offered until it lands.
+            this.loadChannels();
             if (this.state.sessionId) {
                 this.refresh();
                 this.startPolling();
@@ -100,6 +106,37 @@ export class SeeItLivePanel extends Component {
         if (channel === "sms") return this.state.recipients.phones[0] || "";
         if (channel === "email") return this.state.recipients.emails[0] || "";
         return "";
+    }
+
+    /**
+     * Leave out the channels the plan does not allow — in practice SMS — and
+     * move off a default the plan does not allow onto the first one left
+     * (email). Fails open: if the lookup fails, every channel stays offered,
+     * and the API still refuses an SMS session the plan does not include.
+     */
+    async loadChannels() {
+        let channels;
+        try {
+            channels = await this.orm.call("seeitlive.session", "rpc_allowed_channels", []);
+        } catch {
+            return;
+        }
+        this.state.channels = channels;
+        if (!channels.includes(this.state.channel)) {
+            this.state.channel = channels[0];
+            this.state.recipient = this.defaultRecipient(this.state.channel);
+            this.state.consent = false;
+        }
+    }
+
+    /**
+     * SMS is offered for a re-share when the plan allows it, or when SMS is
+     * already the session's recorded channel: the API only gates a
+     * deliberate switch TO SMS, and re-sending an existing SMS invite is
+     * allowed whatever the plan.
+     */
+    get reshareOffersSms() {
+        return this.state.channels.includes("sms") || this.state.session.channel === "sms";
     }
 
     onChannelChange(ev) {

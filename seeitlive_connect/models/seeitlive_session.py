@@ -373,6 +373,12 @@ class SeeItLiveSession(models.Model):
         )
         return data.get('agentViewUrl') or ''
 
+    @api.model
+    def rpc_allowed_channels(self):
+        """The channels the panel may offer — see seeitlive.api's
+        _allowed_channels. Never raises, so the panel can call it unguarded."""
+        return self.env['seeitlive.api']._allowed_channels()
+
     # ------------------------------------------------------------------
     # Reviving an invitation
     # ------------------------------------------------------------------
