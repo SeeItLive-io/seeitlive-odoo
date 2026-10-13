@@ -28,6 +28,11 @@ _logger = logging.getLogger(__name__)
 API_BASE_URL = 'https://api.seeitlive.io/v1'
 REQUEST_TIMEOUT = 15
 
+# Every invitation channel, in the order the panel offers them. The panel
+# falls back to the first one left when its default is not allowed, so this
+# order is part of the contract (email before link).
+CHANNELS = ('sms', 'email', 'link')
+
 
 class SeeItLiveApiError(UserError):
     """A ``UserError`` that also carries the HTTP status that raised it.
@@ -299,6 +304,29 @@ class SeeItLiveApi(models.AbstractModel):
             'origins, so the live viewer will not load. Add it in SeeItLive '
             'under the key\'s Security tab.'
         ) % {'origin': origin}
+
+    # ------------------------------------------------------------------
+    # Plan capabilities
+    # ------------------------------------------------------------------
+
+    @api.model
+    def _allowed_channels(self):
+        """The invitation channels the key's plan allows, in panel order.
+
+        Fails open — every channel — on any failure: no key yet, a network
+        error, an API older than /capabilities, a reply with no list. The API
+        refuses an SMS session the plan does not include anyway, so an
+        unknown answer costs no more than the panel did before this existed,
+        and must never take SMS away from a team that pays for it.
+        """
+        try:
+            data = self._request('GET', '/capabilities')
+        except (UserError, ValueError):
+            return list(CHANNELS)
+        channels = data.get('channels') if isinstance(data, dict) else None
+        if not isinstance(channels, list) or not channels:
+            return list(CHANNELS)
+        return [c for c in CHANNELS if c in channels]
 
     # ------------------------------------------------------------------
     # Errors
