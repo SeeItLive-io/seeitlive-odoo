@@ -1,0 +1,68 @@
+.o_seeitlive_panel {
+    padding: 8px 0;
+
+    .o_seeitlive_launcher {
+        max-width: 480px;
+    }
+
+    .o_seeitlive_qr {
+        width: 160px;
+        height: 160px;
+        border: 1px solid var(--gray-300, #dee2e6);
+        border-radius: 4px;
+        background: #fff;
+    }
+
+    .o_seeitlive_secret_value {
+        font-family: var(--font-monospace, monospace);
+        font-size: 2rem;
+        letter-spacing: 0.15em;
+        font-weight: 600;
+    }
+
+    .o_seeitlive_frame {
+        width: 100%;
+        // A fixed pixel height (520px) was harmless while the wrapper bug
+        // below pinned this frame at ~245px wide — at that width almost any
+        // height reads as "portrait-ish and roomy". Now that the frame
+        // actually fills its row (up to ~1200px), a fixed height would
+        // instead flatten it into a short wide banner. Use a 16:9 box
+        // instead — the same convention video embeds (e.g. YouTube) use
+        // regardless of the source's real orientation, because it is the
+        // *iframe's* shape, not the stream's: the agent-view page inside
+        // fits whatever content it has (portrait phone video included) to
+        // the box it is given, the same "contain" letterboxing already
+        // used on the guest page (see the annotation-toolbar work).
+        aspect-ratio: 16 / 9;
+        height: auto;
+        border: 0;
+        border-radius: 6px;
+        background: #000;
+    }
+}
+
+// .o_field_widget defaults to display: inline-block in Odoo's backend
+// styles, so it shrinks to fit its content instead of filling its row —
+// .o_seeitlive_panel above, and this frame's width: 100% inside it, then
+// both resolve against that shrunken box. That is the actual cause of the
+// "postage stamp" viewer, not the <setting>/notebook layout it lives in.
+// Odoo derives the wrapper class from the widget name, and this widget is
+// registered under two names (the record-embedded panel and the
+// seeitlive.session form's own copy), so both need it. Do not delete this
+// as redundant with .o_seeitlive_panel/.o_seeitlive_frame above — without
+// it, width: 100% has nothing full-width to resolve against.
+.o_field_seeitlive_viewer,
+.o_field_seeitlive_session_viewer {
+    display: block;
+    width: 100%;
+}
+
+// Same specificity as the nested ".o_seeitlive_panel .o_seeitlive_frame"
+// rule above (two class selectors each), so without this it only wins
+// because it happens to come later in this file — a future reordering of
+// these blocks would silently drop the full-screen height back to 16:9.
+// Nest one class deeper (three selectors) so it wins on specificity
+// instead of source order.
+.o_seeitlive_fullscreen .o_seeitlive_panel .o_seeitlive_frame {
+    height: 70vh;
+}

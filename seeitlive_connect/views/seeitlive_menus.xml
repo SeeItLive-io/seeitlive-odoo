@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="seeitlive_menu_root" name="SeeItLive" sequence="95"
+              web_icon="seeitlive_connect,static/description/icon.png"/>
+    <menuitem id="seeitlive_menu_sessions" name="Sessions"
+              parent="seeitlive_menu_root" action="seeitlive_session_action"
+              sequence="10"/>
+    <menuitem id="seeitlive_menu_config" name="Configuration"
+              parent="seeitlive_menu_root" sequence="90"
+              groups="base.group_system"
+              action="base_setup.action_general_configuration"/>
+</odoo>

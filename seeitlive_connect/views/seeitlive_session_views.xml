@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="seeitlive_session_view_list" model="ir.ui.view">
+        <field name="name">seeitlive.session.list</field>
+        <field name="model">seeitlive.session</field>
+        <field name="arch" type="xml">
+            <tree string="SeeItLive Sessions" create="false">
+                <field name="create_date" string="Started"/>
+                <field name="created_by"/>
+                <field name="res_model" string="Model"/>
+                <field name="recipient"/>
+                <field name="channel"/>
+                <field name="duration" widget="float_time" string="Duration"/>
+                <field name="snapshot_count"/>
+                <field name="state" widget="badge"
+                       decoration-success="state == 'live'"
+                       decoration-info="state in ('pending', 'ringing')"
+                       decoration-muted="state in ('ended', 'expired', 'cancelled')"
+                       decoration-danger="state == 'error'"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="seeitlive_session_view_form" model="ir.ui.view">
+        <field name="name">seeitlive.session.form</field>
+        <field name="model">seeitlive.session</field>
+        <field name="arch" type="xml">
+            <form string="SeeItLive Session" create="false">
+                <header>
+                    <button name="action_open_record" type="object"
+                            string="Open the record" class="btn-secondary"
+                            invisible="not res_model"/>
+                    <button name="action_sync" type="object"
+                            string="Sync now" class="btn-secondary" icon="fa-refresh"/>
+                    <button name="action_reshare_button" type="object"
+                            string="Re-share" class="btn-secondary" icon="fa-share-alt"
+                            invisible="state in ('ended', 'cancelled')"
+                            confirm="Extend the current invitation link, resending it on its recorded channel unless it is link-only?"/>
+                    <field name="state" widget="statusbar"
+                           statusbar_visible="pending,live,ended"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1><field name="name" readonly="1"/></h1>
+                    </div>
+                    <field name="res_model" invisible="1"/>
+                    <div class="o_seeitlive_fullscreen mb-3">
+                        <field name="id" widget="seeitlive_session_viewer" nolabel="1"
+                               invisible="state in ('ended', 'expired', 'cancelled', 'error')"/>
+                    </div>
+                    <group>
+                        <group string="Invitation">
+                            <field name="channel"/>
+                            <field name="recipient"/>
+                            <field name="invite_short_url" widget="url"
+                                   invisible="not invite_short_url"/>
+                            <field name="invite_url" widget="url"/>
+                            <field name="expires_at"/>
+                            <field name="protection"/>
+                        </group>
+                        <group string="Result">
+                            <field name="started_at"/>
+                            <field name="ended_at"/>
+                            <field name="duration" widget="float_time"/>
+                            <field name="snapshot_count"/>
+                            <field name="synced_at"/>
+                            <field name="created_by"/>
+                            <field name="last_error" invisible="not last_error"
+                                   class="text-danger"/>
+                        </group>
+                    </group>
+                    <group string="Scan to open on a phone">
+                        <field name="qr_png" widget="image" nolabel="1"
+                               options="{'size': [180, 180]}"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="seeitlive_session_action" model="ir.actions.act_window">
+        <field name="name">Sessions</field>
+        <field name="res_model">seeitlive.session</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">No live sessions yet</p>
+            <p>Start one from the <b>SeeItLive</b> tab of a contact, lead or task.</p>
+        </field>
+    </record>
+</odoo>
