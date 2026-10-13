@@ -1,0 +1,959 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* seeitlive_connect
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2026-09-02 00:00+0000\n"
+"Last-Translator: \n"
+"Language-Team: Spanish\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: seeitlive_connect
+#: model_terms:ir.ui.view,arch_db:seeitlive_connect.res_config_settings_view_form_seeitlive
+msgid "<i class=\"fa fa-flask me-1\"/>Sandbox key — sessions are not billed."
+msgstr "<i class=\"fa fa-flask me-1\"/>Clave sandbox — las sesiones no se facturan."
+
+#. module: seeitlive_connect
+#. odoo-python
+#: code:addons/seeitlive_connect/models/seeitlive_session.py:0
+#, python-format
+msgid ""
+"<p><b>SeeItLive</b> — live view session ended.<br/>Duration: %(minutes)s min"
+" %(seconds)s s · Snapshots: %(count)s</p>"
+msgstr "<p><b>SeeItLive</b> — la sesión de vista en vivo ha finalizado.<br/>Duración: %(minutes)s min %(seconds)s s · Capturas: %(count)s</p>"
+
+#. module: seeitlive_connect
+#: model:ir.model.fields,field_description:seeitlive_connect.field_res_config_settings__seeitlive_api_key
+#: model_terms:ir.ui.view,arch_db:seeitlive_connect.res_config_settings_view_form_seeitlive
+msgid "API Key"
+msgstr "Clave API"
+
+#. module: seeitlive_connect
+#: model:ir.model.fields,field_description:seeitlive_connect.field_seeitlive_session__created_by
+msgid "Agent"
+msgstr "Agente"
+
+#. module: seeitlive_connect
+#: model:ir.model.fields,field_description:seeitlive_connect.field_res_config_settings__seeitlive_attach_snapshots
+msgid "Attach Snapshots to the Record"
+msgstr "Adjuntar capturas a la ficha"
+
+#. module: seeitlive_connect
+#: model_terms:ir.ui.view,arch_db:seeitlive_connect.res_config_settings_view_form_seeitlive
+msgid "Attach snapshots to the record"
+msgstr "Adjuntar capturas a la ficha"
+
+#. module: seeitlive_connect
+#: model:ir.model.fields.selection,name:seeitlive_connect.selection__seeitlive_session__state__cancelled
+msgid "Cancelled"
+msgstr "Cancelada"
+
+#. module: seeitlive_connect
+#. odoo-javascript
+#: code:addons/seeitlive_connect/static/src/xml/seeitlive_panel.xml:0
+#, python-format
+msgid "Changes in"
+msgstr "Cambia en"
+
+#. module: seeitlive_connect
+#: model:ir.model.fields,field_description:seeitlive_connect.field_seeitlive_session__channel
+msgid "Channel"
+msgstr "Canal"
+
+#. module: seeitlive_connect
+#: model:ir.model,name:seeitlive_connect.model_res_config_settings
+msgid "Config Settings"
+msgstr "Ajustes de configuración"
+
+#. module: seeitlive_connect
+#: model:ir.ui.menu,name:seeitlive_connect.seeitlive_menu_config
+msgid "Configuration"
+msgstr "Configuración"
+
+#. module: seeitlive_connect
+#. odoo-python
+#: code:addons/seeitlive_connect/models/seeitlive_session.py:0
+#, python-format
+msgid ""
+"Confirm the customer’s consent to receive a text message before sending an "
+"SMS invitation."
+msgstr "Confirme el consentimiento del cliente para recibir un mensaje de texto antes de enviar una invitación por SMS."
+
+#. module: seeitlive_connect
+#. odoo-python
+#: code:addons/seeitlive_connect/models/seeitlive_api.py:0
+#, python-format
+msgid "Connected to SeeItLive (%(env)s key)."
+msgstr "Conectado a SeeItLive (clave %(env)s)."
+
+#. module: seeitlive_connect
+#: model_terms:ir.ui.view,arch_db:seeitlive_connect.res_config_settings_view_form_seeitlive
+msgid "Connection"
+msgstr "Conexión"
+
+#. module: seeitlive_connect
+#. odoo-javascript
+#: code:addons/seeitlive_connect/static/src/xml/seeitlive_panel.xml:0
+#, python-format
+msgid "Copy"
+msgstr "Copiar"
+
+#. module: seeitlive_connect
+#. odoo-javascript
+#: code:addons/seeitlive_connect/static/src/js/seeitlive_panel.js:0
+#, python-format
+msgid "Could not load the live view yet. Retrying…"
+msgstr "No se pudo cargar la vista en vivo todavía. Reintentando…"
+
+#. module: seeitlive_connect
+#. odoo-python
+#: code:addons/seeitlive_connect/models/seeitlive_api.py:0
+#, python-format
+msgid ""
+"Could not reach SeeItLive at %(url)s.\n"
+"\n"
+"Check this server outbound network access — firewall, proxy or DNS.\n"
+"\n"
+"%(error)s"
+msgstr "No se pudo conectar con SeeItLive en %(url)s.\n\nCompruebe el acceso de red saliente de este servidor: cortafuegos, proxy o DNS.\n\n%(error)s"
+
+#. module: seeitlive_connect
+#: model:ir.model.fields,field_description:seeitlive_connect.field_seeitlive_session__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: seeitlive_connect
+#: model:ir.model.fields,field_description:seeitlive_connect.field_seeitlive_session__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: seeitlive_connect
+#: model:ir.model.fields,field_description:seeitlive_connect.field_seeitlive_session__invite_url
+msgid "Customer Link"
+msgstr "Enlace del cliente"
+
+#. module: seeitlive_connect
+#: model:ir.model.fields,field_description:seeitlive_connect.field_res_config_settings__seeitlive_default_protection
+msgid "Default Guest Protection"
+msgstr "Protección del invitado por defecto"
+
+#. module: seeitlive_connect
+#: model:ir.model.fields,field_description:seeitlive_connect.field_res_config_settings__seeitlive_default_channel
+msgid "Default Invite Channel"
+msgstr "Canal de invitación por defecto"
+
+#. module: seeitlive_connect
+#: model_terms:ir.ui.view,arch_db:seeitlive_connect.res_config_settings_view_form_seeitlive
+msgid "Defaults"
+msgstr "Valores por defecto"
+
+#. module: seeitlive_connect
+#: model:ir.model.fields,field_description:seeitlive_connect.field_seeitlive_session__display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: seeitlive_connect
+#: model_terms:ir.ui.view,arch_db:seeitlive_connect.seeitlive_session_view_list
+msgid "Duration"
+msgstr "Duración"
+
+#. module: seeitlive_connect
+#: model:ir.model.fields,field_description:seeitlive_connect.field_seeitlive_session__duration
+msgid "Duration (minutes)"
+msgstr "Duración (minutos)"
+
+#. module: seeitlive_connect
+#. odoo-javascript
+#: code:addons/seeitlive_connect/static/src/xml/seeitlive_panel.xml:0
+#: model:ir.model.fields.selection,name:seeitlive_connect.selection__res_config_settings__seeitlive_default_channel__email
+#: model:ir.model.fields.selection,name:seeitlive_connect.selection__seeitlive_session__channel__email
+#, python-format
+msgid "Email"
+msgstr "Correo electrónico"
+
+#. module: seeitlive_connect
+#: model:ir.model,name:seeitlive_connect.model_mail_thread
+msgid "Email Thread"
+msgstr "Hilo de correo electrónico"
+
+#. module: seeitlive_connect
+#. odoo-javascript
+#: code:addons/seeitlive_connect/static/src/xml/seeitlive_panel.xml:0
+#, python-format
+msgid "Email address"
+msgstr "Correo electrónico"
+
+#. module: seeitlive_connect
+#: model:ir.model.fields,field_description:seeitlive_connect.field_res_config_settings__seeitlive_enabled_model_ids
+msgid "Enabled Models"
+msgstr "Modelos habilitados"
+
+#. module: seeitlive_connect
+#: model_terms:ir.ui.view,arch_db:seeitlive_connect.res_config_settings_view_form_seeitlive
+msgid "Enabled models"
+msgstr "Modelos habilitados"
+
+#. module: seeitlive_connect
+#: model:ir.model.fields,field_description:seeitlive_connect.field_seeitlive_session__ended_at
+#: model:ir.model.fields.selection,name:seeitlive_connect.selection__seeitlive_session__state__ended
+msgid "Ended"
+msgstr "Finalizada"
+
+#. module: seeitlive_connect
+#. odoo-python
+#: code:addons/seeitlive_connect/models/seeitlive_session.py:0
+#, python-format
+msgid "Enter the customer’s %s before starting the session."
+msgstr "Introduzca %s del cliente antes de iniciar la sesión."
+
+#. module: seeitlive_connect
+#: model:ir.model.fields.selection,name:seeitlive_connect.selection__seeitlive_session__state__error
+msgid "Error"
+msgstr "Error"
+
+#. module: seeitlive_connect
+#: model:ir.model.fields.selection,name:seeitlive_connect.selection__seeitlive_session__state__expired
+msgid "Expired"
+msgstr "Expirada"
+
+#. module: seeitlive_connect
+#. odoo-javascript
+#: code:addons/seeitlive_connect/static/src/xml/seeitlive_panel.xml:0
+#, python-format
+msgid "Full screen"
+msgstr "Pantalla completa"
+
+#. module: seeitlive_connect
+#: model:ir.model.fields,field_description:seeitlive_connect.field_seeitlive_session__protection
+msgid "Guest Protection"
+msgstr "Protección del invitado"
+
+#. module: seeitlive_connect
+#. odoo-javascript
+#: code:addons/seeitlive_connect/static/src/xml/seeitlive_panel.xml:0
+#: model_terms:ir.ui.view,arch_db:seeitlive_connect.res_config_settings_view_form_seeitlive
+#, python-format
+msgid "Guest protection"
+msgstr "Protección del invitado"
+
+#. module: seeitlive_connect
+#: model:ir.model.fields,help:seeitlive_connect.field_res_config_settings__seeitlive_default_ttl_minutes
+msgid "How long the customer link stays valid. 1 to 1440."
+msgstr "Tiempo que el enlace del cliente permanece válido. De 1 a 1440."
+
+#. module: seeitlive_connect
+#: model:ir.model.fields,field_description:seeitlive_connect.field_seeitlive_session__id
+msgid "ID"
+msgstr "ID"
+
+#. module: seeitlive_connect
+#: model_terms:ir.ui.view,arch_db:seeitlive_connect.seeitlive_session_view_form
+msgid "Invitation"
+msgstr "Invitación"
+
+#. module: seeitlive_connect
+#: model:ir.model.fields,field_description:seeitlive_connect.field_seeitlive_session__invite_code
+msgid "Invite Code"
+msgstr "Código de invitación"
+
+#. module: seeitlive_connect
+#: model:ir.model.fields,field_description:seeitlive_connect.field_res_config_settings__seeitlive_default_ttl_minutes
+msgid "Invite Lifetime (minutes)"
+msgstr "Duración de la invitación (minutos)"
+
+#. module: seeitlive_connect
+#: model_terms:ir.ui.view,arch_db:seeitlive_connect.res_config_settings_view_form_seeitlive
+msgid "Invite channel"
+msgstr "Canal de invitación"
+
+#. module: seeitlive_connect
+#: model_terms:ir.ui.view,arch_db:seeitlive_connect.res_config_settings_view_form_seeitlive
+msgid "Invite lifetime (minutes)"
+msgstr "Duración de la invitación (minutos)"
+
+#. module: seeitlive_connect
+#. odoo-javascript
+#: code:addons/seeitlive_connect/static/src/xml/seeitlive_panel.xml:0
+#, python-format
+msgid "LIVE"
+msgstr "EN VIVO"
+
+#. module: seeitlive_connect
+#: model:ir.model.fields,field_description:seeitlive_connect.field_seeitlive_session__last_error
+msgid "Last Error"
+msgstr "Último error"
+
+#. module: seeitlive_connect
+#: model:ir.model.fields,field_description:seeitlive_connect.field_seeitlive_session__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: seeitlive_connect
+#: model:ir.model.fields,field_description:seeitlive_connect.field_seeitlive_session__write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: seeitlive_connect
+#: model:ir.model.fields,field_description:seeitlive_connect.field_seeitlive_session__expires_at
+msgid "Link Expires"
+msgstr "El enlace caduca"
+
+#. module: seeitlive_connect
+#. odoo-javascript
+#: code:addons/seeitlive_connect/static/src/js/seeitlive_panel.js:0
+#, python-format
+msgid "Link copied."
+msgstr "Enlace copiado."
+
+#. module: seeitlive_connect
+#: model:ir.model.fields.selection,name:seeitlive_connect.selection__res_config_settings__seeitlive_default_channel__link
+#: model:ir.model.fields.selection,name:seeitlive_connect.selection__seeitlive_session__channel__link
+msgid "Link only"
+msgstr "Solo enlace"
+
+#. module: seeitlive_connect
+#. odoo-javascript
+#: code:addons/seeitlive_connect/static/src/xml/seeitlive_panel.xml:0
+#, python-format
+msgid "Link only (no message sent)"
+msgstr "Solo enlace (no se envía ningún mensaje)"
+
+#. module: seeitlive_connect
+#: model:ir.model.fields.selection,name:seeitlive_connect.selection__seeitlive_session__state__live
+msgid "Live"
+msgstr "En vivo"
+
+#. module: seeitlive_connect
+#: model:ir.model.fields,field_description:seeitlive_connect.field_account_analytic_account__seeitlive_active_session_id
+#: model:ir.model.fields,field_description:seeitlive_connect.field_calendar_event__seeitlive_active_session_id
+#: model:ir.model.fields,field_description:seeitlive_connect.field_crm_team__seeitlive_active_session_id
+#: model:ir.model.fields,field_description:seeitlive_connect.field_crm_team_member__seeitlive_active_session_id
+#: model:ir.model.fields,field_description:seeitlive_connect.field_discuss_channel__seeitlive_active_session_id
+#: model:ir.model.fields,field_description:seeitlive_connect.field_mail_blacklist__seeitlive_active_session_id
+#: model:ir.model.fields,field_description:seeitlive_connect.field_mail_thread__seeitlive_active_session_id
+#: model:ir.model.fields,field_description:seeitlive_connect.field_mail_thread_blacklist__seeitlive_active_session_id
+#: model:ir.model.fields,field_description:seeitlive_connect.field_mail_thread_cc__seeitlive_active_session_id
+#: model:ir.model.fields,field_description:seeitlive_connect.field_mail_thread_main_attachment__seeitlive_active_session_id
+#: model:ir.model.fields,field_description:seeitlive_connect.field_mail_thread_phone__seeitlive_active_session_id
+#: model:ir.model.fields,field_description:seeitlive_connect.field_maintenance_equipment__seeitlive_active_session_id
+#: model:ir.model.fields,field_description:seeitlive_connect.field_maintenance_equipment_category__seeitlive_active_session_id
+#: model:ir.model.fields,field_description:seeitlive_connect.field_maintenance_request__seeitlive_active_session_id
+#: model:ir.model.fields,field_description:seeitlive_connect.field_phone_blacklist__seeitlive_active_session_id
+#: model:ir.model.fields,field_description:seeitlive_connect.field_product_pricelist__seeitlive_active_session_id
+#: model:ir.model.fields,field_description:seeitlive_connect.field_product_product__seeitlive_active_session_id
+#: model:ir.model.fields,field_description:seeitlive_connect.field_product_template__seeitlive_active_session_id
+#: model:ir.model.fields,field_description:seeitlive_connect.field_res_partner__seeitlive_active_session_id
+#: model:ir.model.fields,field_description:seeitlive_connect.field_res_users__seeitlive_active_session_id
+msgid "Live Session"
+msgstr "Sesión en vivo"
+
+#. module: seeitlive_connect
+#. odoo-python
+#: code:addons/seeitlive_connect/models/mail_thread.py:0
+#, python-format
+msgid "Live view"
+msgstr "Vista en vivo"
+
+#. module: seeitlive_connect
+#. odoo-javascript
+#: code:addons/seeitlive_connect/static/src/js/seeitlive_panel.js:0
+#, python-format
+msgid "Live view started."
+msgstr "Vista en vivo iniciada."
+
+#. module: seeitlive_connect
+#. odoo-javascript
+#: code:addons/seeitlive_connect/static/src/xml/seeitlive_panel.xml:0
+#, python-format
+msgid "Mobile number"
+msgstr "Número de móvil"
+
+#. module: seeitlive_connect
+#: model_terms:ir.ui.view,arch_db:seeitlive_connect.seeitlive_session_view_list
+msgid "Model"
+msgstr "Modelo"
+
+#. module: seeitlive_connect
+#. odoo-python
+#: code:addons/seeitlive_connect/models/seeitlive_api.py:0
+#, python-format
+msgid ""
+"No SeeItLive API key is configured. Open Settings > SeeItLive and paste a "
+"key (it starts with sil_live_ or sil_test_)."
+msgstr "No hay ninguna clave API de SeeItLive configurada. Abra Ajustes > SeeItLive y pegue una clave (empieza por sil_live_ o sil_test_)."
+
+#. module: seeitlive_connect
+#: model_terms:ir.actions.act_window,help:seeitlive_connect.seeitlive_session_action
+msgid "No live sessions yet"
+msgstr "Aún no hay sesiones en vivo"
+
+#. module: seeitlive_connect
+#. odoo-javascript
+#: code:addons/seeitlive_connect/static/src/xml/seeitlive_panel.xml:0
+#: model:ir.model.fields.selection,name:seeitlive_connect.selection__res_config_settings__seeitlive_default_protection__none
+#: model:ir.model.fields.selection,name:seeitlive_connect.selection__seeitlive_session__protection__none
+#, python-format
+msgid "None"
+msgstr "Ninguna"
+
+#. module: seeitlive_connect
+#: model:ir.model.fields,help:seeitlive_connect.field_res_config_settings__seeitlive_signing_secret
+msgid ""
+"Only needed when the API key has request signing enabled. Every outgoing "
+"request is then signed with HMAC-SHA256."
+msgstr "Solo es necesario cuando la clave API tiene activada la firma de solicitudes. Cada solicitud saliente se firma entonces con HMAC-SHA256."
+
+#. module: seeitlive_connect
+#: model_terms:ir.ui.view,arch_db:seeitlive_connect.res_config_settings_view_form_seeitlive
+msgid "Only when the key has signing enabled."
+msgstr "Solo cuando la clave tiene la firma activada."
+
+#. module: seeitlive_connect
+#: model_terms:ir.ui.view,arch_db:seeitlive_connect.seeitlive_session_view_form
+msgid "Open the record"
+msgstr "Abrir la ficha"
+
+#. module: seeitlive_connect
+#. odoo-javascript
+#: code:addons/seeitlive_connect/static/src/xml/seeitlive_panel.xml:0
+#, python-format
+msgid "Or scan this"
+msgstr "O escanee esto"
+
+#. module: seeitlive_connect
+#. odoo-javascript
+#: code:addons/seeitlive_connect/static/src/xml/seeitlive_panel.xml:0
+#: model:ir.model.fields.selection,name:seeitlive_connect.selection__res_config_settings__seeitlive_default_protection__password
+#: model:ir.model.fields.selection,name:seeitlive_connect.selection__seeitlive_session__protection__password
+#, python-format
+msgid "Password"
+msgstr "Contraseña"
+
+#. module: seeitlive_connect
+#. odoo-javascript
+#: code:addons/seeitlive_connect/static/src/xml/seeitlive_panel.xml:0
+#, python-format
+msgid "Pop out"
+msgstr "Abrir en ventana"
+
+#. module: seeitlive_connect
+#: model:ir.model.fields,field_description:seeitlive_connect.field_seeitlive_session__qr_png
+msgid "QR Code"
+msgstr "Código QR"
+
+#. module: seeitlive_connect
+#. odoo-python
+#: code:addons/seeitlive_connect/models/seeitlive_api.py:0
+#, python-format
+msgid ""
+"Reached %(url)s, but the response does not look like the SeeItLive API (not "
+"JSON). Something on this network — a proxy or a captive portal — is likely "
+"answering in its place."
+msgstr "Se alcanzó %(url)s, pero la respuesta no parece la API de SeeItLive (no es JSON). Algo en esta red —un proxy o un portal cautivo— probablemente está respondiendo en su lugar."
+
+#. module: seeitlive_connect
+#. odoo-javascript
+#: code:addons/seeitlive_connect/static/src/xml/seeitlive_panel.xml:0
+#, python-format
+msgid "Read this to the customer"
+msgstr "Lea esto al cliente"
+
+#. module: seeitlive_connect
+#: model:ir.model.fields,field_description:seeitlive_connect.field_seeitlive_session__recipient
+msgid "Recipient"
+msgstr "Destinatario"
+
+#. module: seeitlive_connect
+#: model:ir.model.fields,help:seeitlive_connect.field_seeitlive_session__sms_consent
+msgid ""
+"Recorded when the agent confirmed the customer agreed to receive a text "
+"message. Kept for compliance."
+msgstr "Se registra cuando el agente confirma que el cliente aceptó recibir un mensaje de texto. Se conserva por motivos de cumplimiento."
+
+#. module: seeitlive_connect
+#: model_terms:ir.ui.view,arch_db:seeitlive_connect.res_config_settings_view_form_seeitlive
+msgid "Records of these models get a SeeItLive tab."
+msgstr "Los registros de estos modelos reciben una pestaña SeeItLive."
+
+#. module: seeitlive_connect
+#: model:ir.model.fields,help:seeitlive_connect.field_res_config_settings__seeitlive_enabled_model_ids
+msgid ""
+"Records of these models get a SeeItLive tab. Only models with a chatter are "
+"listed."
+msgstr "Los registros de estos modelos reciben una pestaña SeeItLive. Solo se listan los modelos que tienen chatter."
+
+#. module: seeitlive_connect
+#: model:ir.model.fields,field_description:seeitlive_connect.field_seeitlive_session__res_model
+msgid "Related Model"
+msgstr "Modelo relacionado"
+
+#. module: seeitlive_connect
+#: model:ir.model.fields,field_description:seeitlive_connect.field_seeitlive_session__res_id
+msgid "Related Record ID"
+msgstr "ID del registro relacionado"
+
+#. module: seeitlive_connect
+#: model:ir.model.fields,field_description:seeitlive_connect.field_res_config_settings__seeitlive_signing_secret
+#: model_terms:ir.ui.view,arch_db:seeitlive_connect.res_config_settings_view_form_seeitlive
+msgid "Request Signing Secret"
+msgstr "Secreto de firma de solicitudes"
+
+#. module: seeitlive_connect
+#: model_terms:ir.ui.view,arch_db:seeitlive_connect.seeitlive_session_view_form
+msgid "Result"
+msgstr "Resultado"
+
+#. module: seeitlive_connect
+#: model:ir.model.fields,field_description:seeitlive_connect.field_seeitlive_session__synced_at
+msgid "Results Synced"
+msgstr "Resultados sincronizados"
+
+#. module: seeitlive_connect
+#: model:ir.model.fields.selection,name:seeitlive_connect.selection__seeitlive_session__state__ringing
+msgid "Ringing"
+msgstr "Llamando"
+
+#. module: seeitlive_connect
+#. odoo-javascript
+#: code:addons/seeitlive_connect/static/src/xml/seeitlive_panel.xml:0
+#: model:ir.model.fields.selection,name:seeitlive_connect.selection__res_config_settings__seeitlive_default_protection__totp
+#: model:ir.model.fields.selection,name:seeitlive_connect.selection__seeitlive_session__protection__totp
+#, python-format
+msgid "Rotating code"
+msgstr "Código rotativo"
+
+#. module: seeitlive_connect
+#. odoo-javascript
+#: code:addons/seeitlive_connect/static/src/xml/seeitlive_panel.xml:0
+#: model:ir.model.fields.selection,name:seeitlive_connect.selection__res_config_settings__seeitlive_default_channel__sms
+#: model:ir.model.fields.selection,name:seeitlive_connect.selection__seeitlive_session__channel__sms
+#, python-format
+msgid "SMS"
+msgstr "SMS"
+
+#. module: seeitlive_connect
+#: model:ir.model.fields,field_description:seeitlive_connect.field_seeitlive_session__sms_consent
+msgid "SMS Consent Given"
+msgstr "Consentimiento de SMS otorgado"
+
+#. module: seeitlive_connect
+#: model:ir.model.fields,field_description:seeitlive_connect.field_res_config_settings__seeitlive_is_sandbox
+msgid "Sandbox Mode"
+msgstr "Modo sandbox"
+
+#. module: seeitlive_connect
+#. odoo-javascript
+#: code:addons/seeitlive_connect/static/src/xml/seeitlive_panel.xml:0
+#, python-format
+msgid "Save this record first — SeeItLive needs it to know who to invite."
+msgstr "Guarde primero esta ficha — SeeItLive la necesita para saber a quién invitar."
+
+#. module: seeitlive_connect
+#: model_terms:ir.ui.view,arch_db:seeitlive_connect.seeitlive_session_view_form
+msgid "Scan to open on a phone"
+msgstr "Escanee para abrir en un teléfono"
+
+#. module: seeitlive_connect
+#. odoo-javascript
+#: code:addons/seeitlive_connect/static/src/xml/seeitlive_panel.xml:0
+#, python-format
+msgid "Scan to open the live view"
+msgstr "Escanee para abrir la vista en vivo"
+
+#. module: seeitlive_connect
+#. odoo-python
+#: code:addons/seeitlive_connect/models/res_config_settings.py:0
+#: model:ir.ui.menu,name:seeitlive_connect.seeitlive_menu_root
+#: model_terms:ir.ui.view,arch_db:seeitlive_connect.res_config_settings_view_form_seeitlive
+#, python-format
+msgid "SeeItLive"
+msgstr "SeeItLive"
+
+#. module: seeitlive_connect
+#: model:ir.model,name:seeitlive_connect.model_seeitlive_api
+msgid "SeeItLive API Client"
+msgstr "Cliente API de SeeItLive"
+
+#. module: seeitlive_connect
+#: model:ir.model,name:seeitlive_connect.model_seeitlive_session
+#: model_terms:ir.ui.view,arch_db:seeitlive_connect.seeitlive_session_view_form
+msgid "SeeItLive Session"
+msgstr "Sesión SeeItLive"
+
+#. module: seeitlive_connect
+#: model:ir.model.fields,field_description:seeitlive_connect.field_account_analytic_account__seeitlive_session_ids
+#: model:ir.model.fields,field_description:seeitlive_connect.field_calendar_event__seeitlive_session_ids
+#: model:ir.model.fields,field_description:seeitlive_connect.field_crm_team__seeitlive_session_ids
+#: model:ir.model.fields,field_description:seeitlive_connect.field_crm_team_member__seeitlive_session_ids
+#: model:ir.model.fields,field_description:seeitlive_connect.field_discuss_channel__seeitlive_session_ids
+#: model:ir.model.fields,field_description:seeitlive_connect.field_mail_blacklist__seeitlive_session_ids
+#: model:ir.model.fields,field_description:seeitlive_connect.field_mail_thread__seeitlive_session_ids
+#: model:ir.model.fields,field_description:seeitlive_connect.field_mail_thread_blacklist__seeitlive_session_ids
+#: model:ir.model.fields,field_description:seeitlive_connect.field_mail_thread_cc__seeitlive_session_ids
+#: model:ir.model.fields,field_description:seeitlive_connect.field_mail_thread_main_attachment__seeitlive_session_ids
+#: model:ir.model.fields,field_description:seeitlive_connect.field_mail_thread_phone__seeitlive_session_ids
+#: model:ir.model.fields,field_description:seeitlive_connect.field_maintenance_equipment__seeitlive_session_ids
+#: model:ir.model.fields,field_description:seeitlive_connect.field_maintenance_equipment_category__seeitlive_session_ids
+#: model:ir.model.fields,field_description:seeitlive_connect.field_maintenance_request__seeitlive_session_ids
+#: model:ir.model.fields,field_description:seeitlive_connect.field_phone_blacklist__seeitlive_session_ids
+#: model:ir.model.fields,field_description:seeitlive_connect.field_product_pricelist__seeitlive_session_ids
+#: model:ir.model.fields,field_description:seeitlive_connect.field_product_product__seeitlive_session_ids
+#: model:ir.model.fields,field_description:seeitlive_connect.field_product_template__seeitlive_session_ids
+#: model:ir.model.fields,field_description:seeitlive_connect.field_res_partner__seeitlive_session_ids
+#: model:ir.model.fields,field_description:seeitlive_connect.field_res_users__seeitlive_session_ids
+#: model_terms:ir.ui.view,arch_db:seeitlive_connect.seeitlive_session_view_list
+msgid "SeeItLive Sessions"
+msgstr "Sesiones SeeItLive"
+
+#. module: seeitlive_connect
+#: model:ir.model.fields,field_description:seeitlive_connect.field_account_analytic_account__seeitlive_snapshot_count
+#: model:ir.model.fields,field_description:seeitlive_connect.field_calendar_event__seeitlive_snapshot_count
+#: model:ir.model.fields,field_description:seeitlive_connect.field_crm_team__seeitlive_snapshot_count
+#: model:ir.model.fields,field_description:seeitlive_connect.field_crm_team_member__seeitlive_snapshot_count
+#: model:ir.model.fields,field_description:seeitlive_connect.field_discuss_channel__seeitlive_snapshot_count
+#: model:ir.model.fields,field_description:seeitlive_connect.field_mail_blacklist__seeitlive_snapshot_count
+#: model:ir.model.fields,field_description:seeitlive_connect.field_mail_thread__seeitlive_snapshot_count
+#: model:ir.model.fields,field_description:seeitlive_connect.field_mail_thread_blacklist__seeitlive_snapshot_count
+#: model:ir.model.fields,field_description:seeitlive_connect.field_mail_thread_cc__seeitlive_snapshot_count
+#: model:ir.model.fields,field_description:seeitlive_connect.field_mail_thread_main_attachment__seeitlive_snapshot_count
+#: model:ir.model.fields,field_description:seeitlive_connect.field_mail_thread_phone__seeitlive_snapshot_count
+#: model:ir.model.fields,field_description:seeitlive_connect.field_maintenance_equipment__seeitlive_snapshot_count
+#: model:ir.model.fields,field_description:seeitlive_connect.field_maintenance_equipment_category__seeitlive_snapshot_count
+#: model:ir.model.fields,field_description:seeitlive_connect.field_maintenance_request__seeitlive_snapshot_count
+#: model:ir.model.fields,field_description:seeitlive_connect.field_phone_blacklist__seeitlive_snapshot_count
+#: model:ir.model.fields,field_description:seeitlive_connect.field_product_pricelist__seeitlive_snapshot_count
+#: model:ir.model.fields,field_description:seeitlive_connect.field_product_product__seeitlive_snapshot_count
+#: model:ir.model.fields,field_description:seeitlive_connect.field_product_template__seeitlive_snapshot_count
+#: model:ir.model.fields,field_description:seeitlive_connect.field_res_partner__seeitlive_snapshot_count
+#: model:ir.model.fields,field_description:seeitlive_connect.field_res_users__seeitlive_snapshot_count
+msgid "SeeItLive Snapshots"
+msgstr "Capturas SeeItLive"
+
+#. module: seeitlive_connect
+#. odoo-javascript
+#: code:addons/seeitlive_connect/static/src/xml/seeitlive_panel.xml:0
+#, python-format
+msgid "SeeItLive agent view"
+msgstr "Vista de agente SeeItLive"
+
+#. module: seeitlive_connect
+#. odoo-python
+#: code:addons/seeitlive_connect/models/seeitlive_api.py:0
+#, python-format
+msgid "SeeItLive could not find that session (it may have been deleted)."
+msgstr "SeeItLive no encontró esa sesión (puede que se haya eliminado)."
+
+#. module: seeitlive_connect
+#. odoo-python
+#: code:addons/seeitlive_connect/models/seeitlive_session.py:0
+#, python-format
+msgid ""
+"SeeItLive could not sync this session within 7 days and has stopped retrying"
+" automatically. Press \"Sync now\" to bring its results in."
+msgstr "SeeItLive no pudo sincronizar esta sesión en 7 días y ha dejado de reintentarlo automáticamente. Pulse «Sincronizar ahora» para traer sus resultados."
+
+#. module: seeitlive_connect
+#. odoo-python
+#: code:addons/seeitlive_connect/models/seeitlive_api.py:0
+#, python-format
+msgid ""
+"SeeItLive refused the request.\n"
+"\n"
+"%(message)s"
+msgstr "SeeItLive rechazó la solicitud.\n\n%(message)s"
+
+#. module: seeitlive_connect
+#. odoo-python
+#: code:addons/seeitlive_connect/models/seeitlive_api.py:0
+#, python-format
+msgid ""
+"SeeItLive rejected the API key (HTTP %(status)s). Check that it is active "
+"and from the right environment."
+msgstr "SeeItLive rechazó la clave API (HTTP %(status)s). Compruebe que esté activa y que provenga del entorno correcto."
+
+#. module: seeitlive_connect
+#. odoo-python
+#: code:addons/seeitlive_connect/models/seeitlive_api.py:0
+#, python-format
+msgid ""
+"SeeItLive rejected your API key (HTTP %(status)s). Open Settings > SeeItLive and check the key is active and from the right environment (live vs test).\n"
+"\n"
+"%(message)s"
+msgstr "SeeItLive rechazó su clave API (HTTP %(status)s). Abra Ajustes > SeeItLive y compruebe que la clave esté activa y provenga del entorno correcto (live o test).\n\n%(message)s"
+
+#. module: seeitlive_connect
+#. odoo-python
+#: code:addons/seeitlive_connect/models/seeitlive_api.py:0
+#, python-format
+msgid ""
+"SeeItLive returned an unexpected error (HTTP %(status)s).\n"
+"\n"
+"%(message)s"
+msgstr "SeeItLive devolvió un error inesperado (HTTP %(status)s).\n\n%(message)s"
+
+#. module: seeitlive_connect
+#. odoo-python
+#: code:addons/seeitlive_connect/models/res_config_settings.py:0
+#, python-format
+msgid "SeeItLive — connection failed"
+msgstr "SeeItLive — fallo de conexión"
+
+#. module: seeitlive_connect
+#: model:ir.actions.server,name:seeitlive_connect.ir_cron_seeitlive_sync_ir_actions_server
+msgid "SeeItLive: bring finished sessions home"
+msgstr "SeeItLive: recuperar las sesiones finalizadas"
+
+#. module: seeitlive_connect
+#. odoo-javascript
+#: code:addons/seeitlive_connect/static/src/xml/seeitlive_panel.xml:0
+#, python-format
+msgid "Send the link by"
+msgstr "Enviar el enlace por"
+
+#. module: seeitlive_connect
+#: model:ir.model.fields,field_description:seeitlive_connect.field_seeitlive_session__name
+msgid "Session ID"
+msgstr "ID de sesión"
+
+#. module: seeitlive_connect
+#: model:ir.actions.act_window,name:seeitlive_connect.seeitlive_session_action
+#: model:ir.ui.menu,name:seeitlive_connect.seeitlive_menu_sessions
+msgid "Sessions"
+msgstr "Sesiones"
+
+#. module: seeitlive_connect
+#: model:ir.model.fields,help:seeitlive_connect.field_seeitlive_session__synced_at
+msgid ""
+"Set once the snapshots and the chatter summary have been posted. Guards "
+"against posting the summary twice."
+msgstr "Se establece una vez publicadas las capturas y el resumen en el chatter. Evita publicar el resumen dos veces."
+
+#. module: seeitlive_connect
+#: model:ir.model.fields,field_description:seeitlive_connect.field_seeitlive_session__invite_short_url
+msgid "Short Link"
+msgstr "Enlace corto"
+
+#. module: seeitlive_connect
+#: model:ir.model.fields,field_description:seeitlive_connect.field_seeitlive_session__snapshot_count
+msgid "Snapshots"
+msgstr "Capturas"
+
+#. module: seeitlive_connect
+#. odoo-javascript
+#: code:addons/seeitlive_connect/static/src/xml/seeitlive_panel.xml:0
+#, python-format
+msgid "Start a live view"
+msgstr "Iniciar una vista en vivo"
+
+#. module: seeitlive_connect
+#. odoo-javascript
+#: code:addons/seeitlive_connect/static/src/xml/seeitlive_panel.xml:0
+#, python-format
+msgid "Start live view"
+msgstr "Iniciar vista en vivo"
+
+#. module: seeitlive_connect
+#: model_terms:ir.actions.act_window,help:seeitlive_connect.seeitlive_session_action
+msgid "Start one from the <b>SeeItLive</b> tab of a contact, lead or task."
+msgstr "Inicie una desde la pestaña <b>SeeItLive</b> de un contacto, una oportunidad o una tarea."
+
+#. module: seeitlive_connect
+#: model:ir.model.fields,field_description:seeitlive_connect.field_seeitlive_session__started_at
+#: model_terms:ir.ui.view,arch_db:seeitlive_connect.seeitlive_session_view_list
+msgid "Started"
+msgstr "Iniciada"
+
+#. module: seeitlive_connect
+#. odoo-javascript
+#: code:addons/seeitlive_connect/static/src/xml/seeitlive_panel.xml:0
+#, python-format
+msgid "Starting…"
+msgstr "Iniciando…"
+
+#. module: seeitlive_connect
+#: model_terms:ir.ui.view,arch_db:seeitlive_connect.res_config_settings_view_form_seeitlive
+msgid "Starts with sil_live_ or sil_test_."
+msgstr "Empieza por sil_live_ o sil_test_."
+
+#. module: seeitlive_connect
+#: model:ir.model.fields,field_description:seeitlive_connect.field_seeitlive_session__state
+msgid "Status"
+msgstr "Estado"
+
+#. module: seeitlive_connect
+#: model_terms:ir.ui.view,arch_db:seeitlive_connect.seeitlive_session_view_form
+msgid "Sync now"
+msgstr "Sincronizar ahora"
+
+#. module: seeitlive_connect
+#: model_terms:ir.ui.view,arch_db:seeitlive_connect.res_config_settings_view_form_seeitlive
+msgid "Test connection"
+msgstr "Probar la conexión"
+
+#. module: seeitlive_connect
+#. odoo-javascript
+#: code:addons/seeitlive_connect/static/src/xml/seeitlive_panel.xml:0
+#, python-format
+msgid "The customer agreed to receive a text message about this."
+msgstr "El cliente aceptó recibir un mensaje de texto sobre esto."
+
+#. module: seeitlive_connect
+#: model:ir.model.fields,help:seeitlive_connect.field_account_analytic_account__seeitlive_active_session_id
+#: model:ir.model.fields,help:seeitlive_connect.field_calendar_event__seeitlive_active_session_id
+#: model:ir.model.fields,help:seeitlive_connect.field_crm_team__seeitlive_active_session_id
+#: model:ir.model.fields,help:seeitlive_connect.field_crm_team_member__seeitlive_active_session_id
+#: model:ir.model.fields,help:seeitlive_connect.field_discuss_channel__seeitlive_active_session_id
+#: model:ir.model.fields,help:seeitlive_connect.field_mail_blacklist__seeitlive_active_session_id
+#: model:ir.model.fields,help:seeitlive_connect.field_mail_thread__seeitlive_active_session_id
+#: model:ir.model.fields,help:seeitlive_connect.field_mail_thread_blacklist__seeitlive_active_session_id
+#: model:ir.model.fields,help:seeitlive_connect.field_mail_thread_cc__seeitlive_active_session_id
+#: model:ir.model.fields,help:seeitlive_connect.field_mail_thread_main_attachment__seeitlive_active_session_id
+#: model:ir.model.fields,help:seeitlive_connect.field_mail_thread_phone__seeitlive_active_session_id
+#: model:ir.model.fields,help:seeitlive_connect.field_maintenance_equipment__seeitlive_active_session_id
+#: model:ir.model.fields,help:seeitlive_connect.field_maintenance_equipment_category__seeitlive_active_session_id
+#: model:ir.model.fields,help:seeitlive_connect.field_maintenance_request__seeitlive_active_session_id
+#: model:ir.model.fields,help:seeitlive_connect.field_phone_blacklist__seeitlive_active_session_id
+#: model:ir.model.fields,help:seeitlive_connect.field_product_pricelist__seeitlive_active_session_id
+#: model:ir.model.fields,help:seeitlive_connect.field_product_product__seeitlive_active_session_id
+#: model:ir.model.fields,help:seeitlive_connect.field_product_template__seeitlive_active_session_id
+#: model:ir.model.fields,help:seeitlive_connect.field_res_partner__seeitlive_active_session_id
+#: model:ir.model.fields,help:seeitlive_connect.field_res_users__seeitlive_active_session_id
+msgid ""
+"The newest session that has not finished. The SeeItLive panel binds to this "
+"field: empty means \"show the launcher\"."
+msgstr "La sesión más reciente que no ha finalizado. El panel de SeeItLive se vincula a este campo: vacío significa «mostrar el lanzador»."
+
+#. module: seeitlive_connect
+#: model:ir.model.fields,help:seeitlive_connect.field_seeitlive_session__protection
+msgid ""
+"The secret itself is never stored here — it is fetched from SeeItLive when "
+"the agent needs to read it out."
+msgstr "El secreto en sí nunca se almacena aquí — se obtiene de SeeItLive cuando el agente necesita leerlo en voz alta."
+
+#. module: seeitlive_connect
+#. odoo-python
+#: code:addons/seeitlive_connect/models/mail_thread.py:0
+#, python-format
+msgid "This record has no SeeItLive session yet."
+msgstr "Esta ficha aún no tiene ninguna sesión SeeItLive."
+
+#. module: seeitlive_connect
+#. odoo-javascript
+#: code:addons/seeitlive_connect/static/src/xml/seeitlive_panel.xml:0
+#, python-format
+msgid "This session has ended."
+msgstr "Esta sesión ha finalizado."
+
+#. module: seeitlive_connect
+#. odoo-python
+#: code:addons/seeitlive_connect/models/seeitlive_session.py:0
+#, python-format
+msgid "This session is not linked to a record."
+msgstr "Esta sesión no está vinculada a ningún registro."
+
+#. module: seeitlive_connect
+#. odoo-python
+#: code:addons/seeitlive_connect/models/seeitlive_session.py:0
+#, python-format
+msgid "This session was never created on SeeItLive."
+msgstr "Esta sesión nunca se creó en SeeItLive."
+
+#. module: seeitlive_connect
+#. odoo-javascript
+#: code:addons/seeitlive_connect/static/src/xml/seeitlive_panel.xml:0
+#, python-format
+msgid "Too many wrong attempts — the customer is locked out."
+msgstr "Demasiados intentos fallidos — el cliente está bloqueado."
+
+#. module: seeitlive_connect
+#. odoo-python
+#: code:addons/seeitlive_connect/models/seeitlive_api.py:0
+#, python-format
+msgid "Unexpected reply from SeeItLive (HTTP %(status)s)."
+msgstr "Respuesta inesperada de SeeItLive (HTTP %(status)s)."
+
+#. module: seeitlive_connect
+#: model:ir.model.fields.selection,name:seeitlive_connect.selection__seeitlive_session__state__pending
+msgid "Waiting for the customer"
+msgstr "Esperando al cliente"
+
+#. module: seeitlive_connect
+#. odoo-javascript
+#: code:addons/seeitlive_connect/static/src/xml/seeitlive_panel.xml:0
+#, python-format
+msgid "Waiting for the customer to open the link…"
+msgstr "Esperando a que el cliente abra el enlace…"
+
+#. module: seeitlive_connect
+#: model_terms:ir.ui.view,arch_db:seeitlive_connect.res_config_settings_view_form_seeitlive
+msgid "Where it appears"
+msgstr "Dónde aparece"
+
+#. module: seeitlive_connect
+#: model:ir.model.fields,help:seeitlive_connect.field_res_config_settings__seeitlive_api_key
+msgid "Your SeeItLive API key. Starts with sil_live_ or sil_test_."
+msgstr "Su clave API de SeeItLive. Empieza por sil_live_ o sil_test_."
+
+#. module: seeitlive_connect
+#. odoo-python
+#: code:addons/seeitlive_connect/models/seeitlive_api.py:0
+#, python-format
+msgid ""
+"Your SeeItLive plan does not include this feature.\n"
+"\n"
+"%(message)s"
+msgstr "Su plan de SeeItLive no incluye esta función.\n\n%(message)s"
+
+#. module: seeitlive_connect
+#. odoo-python
+#: code:addons/seeitlive_connect/models/seeitlive_session.py:0
+#, python-format
+msgid "email address"
+msgstr "el correo electrónico"
+
+#. module: seeitlive_connect
+#: model_terms:ir.ui.view,arch_db:seeitlive_connect.res_config_settings_view_form_seeitlive
+msgid "https://api.seeitlive.io/v1"
+msgstr "https://api.seeitlive.io/v1"
+
+#. module: seeitlive_connect
+#. odoo-python
+#: code:addons/seeitlive_connect/models/seeitlive_api.py:0
+#, python-format
+msgid "live"
+msgstr "producción"
+
+#. module: seeitlive_connect
+#. odoo-python
+#: code:addons/seeitlive_connect/models/seeitlive_session.py:0
+#, python-format
+msgid "phone number"
+msgstr "el número de teléfono"
+
+#. module: seeitlive_connect
+#. odoo-javascript
+#: code:addons/seeitlive_connect/static/src/xml/seeitlive_panel.xml:0
+#, python-format
+msgid "s"
+msgstr "s"
+
+#. module: seeitlive_connect
+#. odoo-javascript
+#: code:addons/seeitlive_connect/static/src/xml/seeitlive_panel.xml:0
+#, python-format
+msgid "snapshot(s) attached."
+msgstr "captura(s) adjuntada(s)."
+
+#. module: seeitlive_connect
+#. odoo-python
+#: code:addons/seeitlive_connect/models/seeitlive_api.py:0
+#, python-format
+msgid "test/sandbox"
+msgstr "prueba/sandbox"

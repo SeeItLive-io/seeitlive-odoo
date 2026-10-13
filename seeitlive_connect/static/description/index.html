@@ -1,0 +1,105 @@
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <div class="oe_span12">
+            <h2 class="oe_slogan">SeeItLive for Odoo</h2>
+            <h3 class="oe_slogan" style="font-weight:300;">See what your customer sees, live, from inside Odoo.</h3>
+            <p class="oe_mt32 text-center">
+                Send a customer a link from any contact, lead or task. They open it on their
+                phone and share their camera &mdash; no app, no account &mdash; and the agent
+                watches, annotates and takes snapshots without leaving the record.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container oe_dark">
+    <div class="oe_row oe_spaced">
+        <div class="oe_span12">
+            <h2 class="oe_slogan">How it works</h2>
+        </div>
+        <div class="oe_span4">
+            <div class="oe_centeralign">
+                <h4>1. Open a record</h4>
+                <p>A contact, a CRM lead, a task &mdash; click the <strong>SeeItLive</strong> tab.</p>
+            </div>
+        </div>
+        <div class="oe_span4">
+            <div class="oe_centeralign">
+                <h4>2. Send the link</h4>
+                <p>By SMS, by email, or copy it yourself. A QR code is there too, for handing over in person.</p>
+            </div>
+        </div>
+        <div class="oe_span4">
+            <div class="oe_centeralign">
+                <h4>3. Watch, live</h4>
+                <p>The customer's camera opens right inside the record. Annotate it and take snapshots as you talk.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <div class="oe_span12">
+            <h2 class="oe_slogan">Key features</h2>
+        </div>
+        <div class="oe_span6">
+            <ul>
+                <li>A three-state panel embedded in the form: launcher, waiting room, live view</li>
+                <li>Works on any model with a chatter &mdash; contacts, leads, tasks, and beyond, your choice</li>
+                <li>SMS, email, or link-only invitations, with an explicit consent gate for SMS</li>
+                <li>Optional guest protection: a password or a rotating code</li>
+            </ul>
+        </div>
+        <div class="oe_span6">
+            <ul>
+                <li>Snapshots land back on the record as attachments automatically</li>
+                <li>A chatter note summarises every finished call, even if the agent's tab closed early</li>
+                <li>HMAC-SHA256 request signing, opt-in per API key</li>
+                <li>Sandbox indicator when using a test API key (<code>sil_test_*</code>)</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container oe_dark">
+    <div class="oe_row oe_spaced">
+        <div class="oe_span12">
+            <h2 class="oe_slogan">Configuration</h2>
+            <ol>
+                <li>Create a <a href="https://seeitlive.io">SeeItLive</a> account and generate an API key.</li>
+                <li>In Odoo: <strong>Settings &rarr; SeeItLive</strong>, paste the key and click <strong>Test connection</strong>.</li>
+                <li>Pick your defaults &mdash; invite channel, invite lifetime, guest protection &mdash; and which models get the tab.</li>
+                <li>Open any enabled record and start a live view.</li>
+            </ol>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <div class="oe_span12">
+            <h2 class="oe_slogan">Data &amp; privacy</h2>
+            <p>
+                This module only talks to SeeItLive when an agent explicitly starts a session.
+                That request sends the recipient's phone number or email address (for the channel
+                chosen) and which Odoo record and database the session belongs to. Nothing else
+                leaves Odoo &mdash; not the record's other fields, not its chatter history. See the
+                module's <code>README.md</code> for the full privacy statement.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container oe_dark">
+    <div class="oe_row oe_spaced">
+        <div class="oe_span12">
+            <h2 class="oe_slogan">Support</h2>
+            <p class="text-center">
+                Questions, bug reports or feature requests:
+                <a href="mailto:support@seeitlive.io">support@seeitlive.io</a><br/>
+                <a href="https://seeitlive.io">seeitlive.io</a>
+            </p>
+        </div>
+    </div>
+</section>
