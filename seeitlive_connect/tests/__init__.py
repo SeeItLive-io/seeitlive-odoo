@@ -7,3 +7,4 @@ from . import test_agent_view
 from . import test_sync
 from . import test_embed_origin
 from . import test_reshare
+from . import test_channels

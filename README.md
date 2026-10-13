@@ -60,7 +60,9 @@ tab is one panel that moves through three states:
    copy and send yourself), the mobile number or email address (prefilled
    from the record's own phone/mobile/email fields, or its partner's), and
    guest protection. SMS requires an explicit tick confirming the customer
-   agreed to receive a text message before the button unlocks. Starting a
+   agreed to receive a text message before the button unlocks. SMS is only
+   offered when your SeeItLive plan includes SMS invites; otherwise the panel
+   starts on email, whatever the default channel in Settings says. Starting a
    session needs the record saved first — there is nothing to attach the
    session to otherwise.
 2. **Waiting room** — the invite link and QR code, and, if the session is
@@ -74,7 +76,8 @@ tab is one panel that moves through three states:
    you do it — switching channel requires typing the new recipient (a blank
    field no longer silently reuses the other channel's address). SMS still
    needs the consent tick, whether SMS is the recorded channel or one you just
-   switched to.
+   switched to. Switching to SMS needs a plan with SMS invites; re-sending a
+   session that was already SMS does not.
 
 3. **Live** — once the customer joins, an embedded viewer shows their camera
    feed and lets the agent annotate it and take snapshots, full-screen or

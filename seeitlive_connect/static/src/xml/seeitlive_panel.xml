@@ -12,7 +12,8 @@
                     <div class="mb-3">
                         <label class="form-label" for="seeitlive_channel">Send the link by</label>
                         <select id="seeitlive_channel" class="form-select" t-on-change="onChannelChange">
-                            <option value="sms" t-att-selected="state.channel === 'sms'">SMS</option>
+                            <option value="sms" t-if="state.channels.includes('sms')"
+                                    t-att-selected="state.channel === 'sms'">SMS</option>
                             <option value="email" t-att-selected="state.channel === 'email'">Email</option>
                             <option value="link" t-att-selected="state.channel === 'link'">Link only (no message sent)</option>
                         </select>
@@ -124,7 +125,7 @@
                                 <label class="form-label" for="seeitlive_reshare_channel">Send the link by</label>
                                 <select id="seeitlive_reshare_channel" class="form-select form-select-sm"
                                         t-on-change="onReshareChannelChange">
-                                    <option value="sms"
+                                    <option value="sms" t-if="reshareOffersSms"
                                             t-att-selected="effectiveReshareChannel === 'sms'">SMS</option>
                                     <option value="email"
                                             t-att-selected="effectiveReshareChannel === 'email'">Email</option>
