@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_config_settings_view_form_seeitlive" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.seeitlive</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form" position="inside">
+                <app data-string="SeeItLive" string="SeeItLive" name="seeitlive_connect"
+                     logo="/seeitlive_connect/static/description/icon.png">
+                    <block title="Connection" name="seeitlive_connection">
+                        <setting string="API Key" help="Starts with sil_live_ or sil_test_.">
+                            <field name="seeitlive_api_key" password="True"/>
+                            <field name="seeitlive_is_sandbox" invisible="1"/>
+                            <div class="text-warning mt-2" invisible="not seeitlive_is_sandbox">
+                                <i class="fa fa-flask me-1"/>Sandbox key — sessions are not billed.
+                            </div>
+                            <div class="mt-2">
+                                <button name="action_seeitlive_test_connection" type="object"
+                                        string="Test connection" class="btn-link"/>
+                            </div>
+                        </setting>
+                        <setting string="This Instance's Embed Origin"
+                                 help="Add this to your SeeItLive API key under Security &gt; Embedding origins.">
+                            <field name="seeitlive_embed_origin" readonly="1"/>
+                        </setting>
+                        <setting string="Request Signing Secret"
+                                 help="Only when the key has signing enabled.">
+                            <field name="seeitlive_signing_secret" password="True"/>
+                        </setting>
+                    </block>
+                    <block title="Defaults" name="seeitlive_defaults">
+                        <setting string="Invite channel">
+                            <field name="seeitlive_default_channel"/>
+                        </setting>
+                        <setting string="Invite lifetime (minutes)">
+                            <field name="seeitlive_default_ttl_minutes"/>
+                        </setting>
+                        <setting string="Guest protection">
+                            <field name="seeitlive_default_protection"/>
+                        </setting>
+                        <setting string="Attach snapshots to the record">
+                            <field name="seeitlive_attach_snapshots"/>
+                        </setting>
+                    </block>
+                    <block title="Where it appears" name="seeitlive_models">
+                        <setting string="Enabled models"
+                                 help="Records of these models get a SeeItLive tab.">
+                            <field name="seeitlive_enabled_model_ids" widget="many2many_tags"
+                                   options="{'no_create': True}"/>
+                        </setting>
+                    </block>
+                </app>
+            </xpath>
+        </field>
+    </record>
+</odoo>

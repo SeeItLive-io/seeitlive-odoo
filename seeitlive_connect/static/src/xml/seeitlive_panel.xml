@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<templates xml:space="preserve">
+
+    <t t-name="seeitlive_connect.Panel">
+        <div class="o_seeitlive_panel">
+
+            <!-- Launcher -->
+            <t t-if="state.phase === 'idle' || state.phase === 'starting'">
+                <div class="o_seeitlive_launcher">
+                    <h4 class="mb-3">Start a live view</h4>
+
+                    <div class="mb-3">
+                        <label class="form-label" for="seeitlive_channel">Send the link by</label>
+                        <select id="seeitlive_channel" class="form-select" t-on-change="onChannelChange">
+                            <option value="sms" t-att-selected="state.channel === 'sms'">SMS</option>
+                            <option value="email" t-att-selected="state.channel === 'email'">Email</option>
+                            <option value="link" t-att-selected="state.channel === 'link'">Link only (no message sent)</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3" t-if="state.channel !== 'link'">
+                        <label class="form-label" for="seeitlive_recipient">
+                            <t t-if="state.channel === 'sms'">Mobile number</t>
+                            <t t-else="">Email address</t>
+                        </label>
+                        <input id="seeitlive_recipient" class="form-control" list="seeitlive_known"
+                               t-model="state.recipient"
+                               t-att-placeholder="state.channel === 'sms' ? '+1 555 555 0123' : 'customer@example.com'"/>
+                        <datalist id="seeitlive_known">
+                            <option t-foreach="options" t-as="value" t-key="value" t-att-value="value"/>
+                        </datalist>
+                    </div>
+
+                    <div class="form-check mb-3" t-if="state.channel === 'sms'">
+                        <input class="form-check-input" type="checkbox" id="seeitlive_consent"
+                               t-model="state.consent"/>
+                        <label class="form-check-label" for="seeitlive_consent">
+                            The customer agreed to receive a text message about this.
+                        </label>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label" for="seeitlive_protection">Guest protection</label>
+                        <select id="seeitlive_protection" class="form-select" t-model="state.protection">
+                            <option value="none">None</option>
+                            <option value="password">Password</option>
+                            <option value="totp">Rotating code</option>
+                        </select>
+                    </div>
+
+                    <p class="text-muted small" t-if="!resId">
+                        Save this record first — SeeItLive needs it to know who to invite.
+                    </p>
+
+                    <button class="btn btn-primary" t-on-click="start" t-att-disabled="!canStart">
+                        <i class="fa fa-video-camera me-1"/>
+                        <t t-if="state.phase === 'starting'">Starting…</t>
+                        <t t-else="">Start live view</t>
+                    </button>
+                </div>
+            </t>
+
+            <!-- Waiting room -->
+            <t t-elif="state.phase === 'waiting'">
+                <div class="o_seeitlive_waiting" t-if="state.session">
+                    <div class="d-flex align-items-center mb-3">
+                        <i class="fa fa-circle-o-notch fa-spin me-2 text-muted"/>
+                        <span class="text-muted">Waiting for the customer to open the link…</span>
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <input class="form-control" readonly="readonly"
+                               t-att-value="state.session.share_url"/>
+                        <button class="btn btn-outline-secondary" t-on-click="copyLink">
+                            <i class="fa fa-clipboard me-1"/>Copy
+                        </button>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-auto" t-if="state.session.qr_data_url">
+                            <img class="o_seeitlive_qr" t-att-src="state.session.qr_data_url"
+                                 alt="Scan to open the live view"/>
+                            <div class="text-muted small text-center mt-1">Or scan this</div>
+                        </div>
+
+                        <div class="col" t-if="state.session.protection.type">
+                            <div class="o_seeitlive_secret">
+                                <div class="text-muted small">Read this to the customer</div>
+                                <div class="o_seeitlive_secret_value">
+                                    <t t-esc="state.session.protection.password || state.session.protection.code"/>
+                                </div>
+                                <div class="text-muted small"
+                                     t-if="state.session.protection.type === 'totp'">
+                                    Changes in <t t-esc="state.session.protection.seconds_remaining"/>s
+                                </div>
+                                <div class="text-danger small" t-if="state.session.protection.locked">
+                                    Too many wrong attempts — the customer is locked out.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="alert alert-warning mt-3" t-if="state.session.error">
+                        <t t-esc="state.session.error"/>
+                    </div>
+
+                    <!-- Only once the invitation is actually dead — computed
+                         server-side in rpc_panel_state, never by comparing
+                         timestamps here, since the agent's own clock cannot
+                         be trusted to say when the API considers a link expired. -->
+                    <div class="o_seeitlive_reshare mt-3" t-if="state.session.expired">
+                        <div class="alert alert-warning">
+                            This invitation link has expired — the customer can no
+                            longer open it. Re-send it, or issue a brand-new one.
+                        </div>
+
+                        <button class="btn btn-outline-warning btn-sm" t-if="!state.reshareOpen"
+                                t-on-click="openReshareForm">
+                            <i class="fa fa-rotate-right me-1"/>Re-share the invitation
+                        </button>
+
+                        <div t-if="state.reshareOpen">
+                            <div class="mb-2">
+                                <label class="form-label" for="seeitlive_reshare_channel">Send the link by</label>
+                                <select id="seeitlive_reshare_channel" class="form-select form-select-sm"
+                                        t-on-change="onReshareChannelChange">
+                                    <option value="sms"
+                                            t-att-selected="effectiveReshareChannel === 'sms'">SMS</option>
+                                    <option value="email"
+                                            t-att-selected="effectiveReshareChannel === 'email'">Email</option>
+                                    <option value="link"
+                                            t-att-selected="effectiveReshareChannel === 'link'">Link only (no message sent)</option>
+                                </select>
+                            </div>
+
+                            <div class="mb-2">
+                                <label class="form-label" for="seeitlive_reshare_recipient">Recipient</label>
+                                <input id="seeitlive_reshare_recipient" class="form-control form-control-sm"
+                                       t-model="state.reshareRecipient"
+                                       t-att-placeholder="state.session.recipient || 'Leave blank to reuse the recorded recipient'"/>
+                                <small class="form-text text-muted"
+                                       t-if="state.reshareChannel &amp;&amp; state.reshareChannel !== state.session.channel">
+                                    Required when switching channel — a blank recipient here
+                                    would fall back to the OTHER channel's recorded address.
+                                </small>
+                            </div>
+
+                            <div class="form-check mb-2" t-if="effectiveReshareChannel === 'sms'">
+                                <input class="form-check-input" type="checkbox" id="seeitlive_reshare_consent"
+                                       t-model="state.reshareConsent"/>
+                                <label class="form-check-label" for="seeitlive_reshare_consent">
+                                    The customer agreed to receive a text message about this.
+                                </label>
+                            </div>
+
+                            <div class="btn-group btn-group-sm">
+                                <button class="btn btn-outline-secondary" t-on-click="onReshareRevive"
+                                        t-att-disabled="!canReshare">
+                                    Re-send the same link
+                                </button>
+                                <button class="btn btn-outline-danger" t-on-click="onReshareNew"
+                                        t-att-disabled="!canReshare">
+                                    Issue a new link — the current one stops working
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Between mount and the first poll resolving (and for up to
+                     five seconds any time a poll throws), state.session is
+                     still null — show a spinner rather than nothing. -->
+                <div class="o_seeitlive_waiting text-muted" t-else="">
+                    <i class="fa fa-circle-o-notch fa-spin me-2"/>Loading…
+                </div>
+            </t>
+
+            <!-- Live -->
+            <t t-elif="state.phase === 'live'">
+                <div class="o_seeitlive_live">
+                    <div class="d-flex align-items-center justify-content-between mb-2">
+                        <span class="badge text-bg-danger">
+                            <i class="fa fa-circle me-1"/>LIVE
+                        </span>
+                        <div class="btn-group btn-group-sm">
+                            <button class="btn btn-outline-secondary" t-on-click="openFullScreen">
+                                <i class="fa fa-expand me-1"/>Full screen
+                            </button>
+                            <button class="btn btn-outline-secondary" t-on-click="popOut"
+                                    t-att-disabled="!state.agentViewUrl">
+                                <i class="fa fa-external-link me-1"/>Pop out
+                            </button>
+                        </div>
+                    </div>
+                    <div class="alert alert-warning mb-2" t-if="state.viewerError">
+                        <t t-esc="state.viewerError"/>
+                    </div>
+                    <iframe t-if="state.agentViewUrl"
+                            class="o_seeitlive_frame"
+                            t-att-src="state.agentViewUrl"
+                            allow="fullscreen"
+                            title="SeeItLive agent view"/>
+                </div>
+            </t>
+
+            <!-- Finished -->
+            <t t-elif="state.phase === 'finished'">
+                <div class="o_seeitlive_finished">
+                    <p class="text-muted">
+                        This session has ended.
+                        <t t-if="state.session &amp;&amp; state.session.snapshot_count">
+                            <t t-esc="state.session.snapshot_count"/> snapshot(s) attached.
+                        </t>
+                    </p>
+                </div>
+            </t>
+        </div>
+    </t>
+
+</templates>
