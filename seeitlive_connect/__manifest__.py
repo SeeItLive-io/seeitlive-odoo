@@ -16,11 +16,12 @@ SeeItLive is a SaaS service (https://seeitlive.io). This module talks to the
 SeeItLive API using an API key you configure in Odoo. No data is sent to
 SeeItLive beyond the sessions you explicitly start.
 """,
-    'author': 'SeeItLive',
-    'maintainer': 'SeeItLive',
+    'author': 'Fennix IT Solutions',
+    'maintainer': 'Fennix IT Solutions',
     'website': 'https://seeitlive.io',
     'support': 'support@seeitlive.io',
     'license': 'LGPL-3',
+    'images': ['static/description/main_screenshot.png'],
     'depends': ['base', 'mail'],
     'external_dependencies': {'python': ['requests']},
     'data': [
